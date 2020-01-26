@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Right Hand</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="right_main.css">
+</head>
+<body>
+  <div class="hand">
+    <span class="thumb"></span>
+    <span class="finger"></span>
+    <span class="finger"></span>
+    <span class="finger"></span>
+    <span class="finger"></span>
+    <span class="palm"></span>
+  </div>
+</body>
+</html>
