@@ -1,0 +1,109 @@
+@keyframes tap{
+	0% , 50%, 100%{
+		transform: rotate(10deg) scale(var(--scale));
+
+	}
+	45%{
+		transform: rotate(45deg) scale(var(--scale));
+	}
+
+
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hand{
+	height: 320px;
+	width: 640px;
+	position: relative;
+}
+.hand::before{
+	content: " ";
+	position: absolute;
+	height: 180px;
+	width: 560px;
+	background-color: #000000;
+	border-radius: 160px 40px;
+	filter: blur(20px) opacity(0.3);
+	top: 260px;
+
+}
+.palm{
+	position: absolute;
+	height: 240px;
+	width: 320px;
+	background-color: #ffcd94;
+	bottom: -20px;
+	right: 10px;
+	border-radius: 40px 160px;
+}
+.thumb{
+	background-color: #ffcd94;
+	border-radius: 120px 80px 80px 40px;
+	height: 128px;
+	width: 384px;
+	position: absolute;
+	right: 5px;
+	bottom: -45px;
+	transform: rotate(-20deg);
+	transform-origin: calc(100% - 80px) 80px;
+	border-bottom: 8px solid rgba(0, 0, 0, 0.1);
+	border-left: 8px solid rgba(0, 0, 0, 0.1);
+}
+.thumb::before{
+	content: " ";
+	position: absolute;
+	height: 76px;
+	width: 76px;
+	background-color: #ffffff;
+	bottom: 0px;
+	left: 20px;
+	border-radius: 60% 10% 10% 30%;
+	border-right: 4px solid rgba(0, 0, 0, 0.1);
+}
+.finger{
+	position: absolute;
+	height: 140px;
+	width: 256px;
+	background-color: #ffcd94;
+	right: 210px;
+	bottom: 70px;
+	transform: rotate(10deg) scale(var(--scale));
+	--scale: calc(1 - (5 - var(--n)) * 0.2);
+	transform-origin: 100% 80px;
+	filter: brightness(calc(100% - (5 - var(--n)) * 10%));
+	animation: tap 1.2s infinite;
+	animation-delay: calc((var(--n) - 2) * 0.1s);
+
+
+}
+.finger::before{
+	content: " ";
+	position: absolute;
+	height: 120px;
+	width: 360px;
+	background-color: #ffcd94;
+	top: -9px;
+	right: 224px;
+	border-radius: 80px;
+	transform: rotate(-60deg);
+	transform-origin: calc(100% - 40px) 40px;
+}
+.finger:nth-of-type(2){
+	--n: 2;
+}
+.finger:nth-of-type(3){
+	--n: 3;
+}
+.finger:nth-of-type(4){
+	--n: 4;
+}
+.finger:nth-of-type(5){
+	--n: 5;
+}
